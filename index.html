@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Animation CSS Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">    
     <style>
         /* --- High-End Animated Variables --- */
         * {
@@ -661,6 +660,44 @@
             .premium-form { grid-template-columns: 1fr; }
             .form-full-row, .premium-form button { grid-column: span 1; }
         }
+        /* --- Mobile Responsive Fixes --- */
+  @media (max-width: 768px) {
+  /* Screen boundary control taake page stretch na ho */
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Header container ko horizontal se vertical stack mein badalne ke liye */
+  .header-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 15px !important;
+    padding: 20px 10px !important;
+    width: 100% !important;
+  }
+
+  /* Menu links ko vertically stack karne ke liye */
+  .menu-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Buttons and links ki clean alignment */
+  .menu-links a {
+    display: inline-block !important;
+    width: auto !important;
+  }
+  
+  .menu-links a:last-child {
+    margin-top: 8px !important;
+  }
+}
     </style>
 </head>
 <body>
