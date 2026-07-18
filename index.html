@@ -885,14 +885,24 @@
 <body>
 
     <!-- Header Navigation with New Executive Logo -->
-    <header class="header-nav">
+   <header class="header-nav">
         <a href="#" class="brand-logo">
             <div class="logo-shield-icon">
-                <i class="fa-solid fa-circle-nodes"></i>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#3b82f6" />
+                            <stop offset="100%" stop-color="#06b6d4" />
+                        </linearGradient>
+                    </defs>
+                </svg>
             </div>
             <div class="logo-text-wrapper">
-                <span class="logo-main">THE RK</span>
-                <span class="logo-sub">AGENCY</span>
+                <span class="logo-main" style="display: block !important;">THE RK</span>
+                <span class="logo-sub" style="display: block !important;">AGENCY</span>
             </div>
         </a>
         <nav class="menu-links">
