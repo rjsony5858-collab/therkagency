@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Animation CSS Library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">    
     <style>
         /* --- High-End Animated Variables --- */
         * {
@@ -293,6 +293,109 @@
         .glow-card p {
             color: var(--text-gray);
             font-size: 15px;
+        }
+
+        /* --- Case Studies / Results Section (New) --- */
+        .results-section {
+            padding: 100px 8%;
+            text-align: center;
+            background: rgba(11, 15, 25, 0.6);
+        }
+
+        .results-tag {
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .results-section h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-white);
+        }
+
+        .results-section h2 span {
+            background: linear-gradient(135deg, var(--purple), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-subtitle {
+            font-size: 17px;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px 35px;
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .case-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
+
+        .case-badge.orange { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+        .case-badge.purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
+        .case-badge.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+
+        .result-stat {
+            font-size: 54px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, var(--text-gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .result-card:hover .result-stat {
+            background: linear-gradient(135deg, var(--text-white), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .result-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 15px;
+        }
+
+        .result-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         /* --- Premium Pricing Section --- */
@@ -667,7 +770,7 @@
 
         /* --- Responsive Matrix System --- */
         @media (max-width: 992px) {
-            .hero-section, .metrics-split, .blog-container, .pricing-grid {
+            .hero-section, .metrics-split, .blog-container, .pricing-grid, .results-grid {
                 grid-template-columns: 1fr;
                 padding: 60px 5%;
             }
@@ -679,54 +782,53 @@
             .premium-form { grid-template-columns: 1fr; }
             .form-full-row, .premium-form button { grid-column: span 1; }
         }
+        
         /* --- Mobile Responsive Fixes --- */
-  @media (max-width: 768px) {
-  /* Screen boundary control taake page stretch na ho */
-  html, body {
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
+        @media (max-width: 768px) {
+            html, body {
+                width: 100% !important;
+                overflow-x: hidden !important;
+            }
 
-  /* Header container ko horizontal se vertical stack mein badalne ke liye */
-  .header-nav {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 15px !important;
-    padding: 20px 10px !important;
-    width: 100% !important;
-  }
+            .header-nav {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 15px !important;
+                padding: 20px 10px !important;
+                width: 100% !important;
+            }
 
-  /* Menu links ko vertically stack karne ke liye */
-  .menu-links {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 12px !important;
-    width: 100% !important;
-  }
+            .menu-links {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 12px !important;
+                width: 100% !important;
+            }
 
-  /* Buttons and links ki clean alignment */
-  .menu-links a {
-    display: inline-block !important;
-    width: auto !important;
-  }
-  
-  .menu-links a:last-child {
-    margin-top: 8px !important;
-  }
-}
+            .menu-links a {
+                display: inline-block !important;
+                width: auto !important;
+                margin-left: 0px !important; /* Mobile reset */
+            }
+            
+            .menu-links a:last-child {
+                margin-top: 8px !important;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->>
+    <!-- Header Navigation -->
     <header class="header-nav">
         <a href="#" class="brand-logo"><span style="margin-right: 8px;">The RK</span><span>Agency</span></a>
         <nav class="menu-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#results">Case Studies</a>
             <a href="#pricing">Pricing</a>
             <a href="#blog">Blog</a>
             <a href="#contact" class="btn-cta-nav">Let's Connect</a>
@@ -807,6 +909,41 @@
         </div>
     </section>
 
+    <!-- Case Studies / Results Section (Newly Added) -->
+    <section id="results" class="results-section">
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <span class="results-tag">Case Studies</span>
+            <h2>Real Results for <span>Real Businesses</span></h2>
+            <p class="results-subtitle">We let our numbers do the talking. Real growth for real businesses.</p>
+        </div>
+
+        <div class="results-grid">
+            <!-- Card 1 -->
+            <div class="result-card" data-aos="fade-up" data-aos-duration="1100">
+                <span class="case-badge orange">E-Commerce Brand</span>
+                <div class="result-stat">300%</div>
+                <h4>Traffic Growth</h4>
+                <p>Deployed a comprehensive SEO and content strategy, tripling organic traffic within 6 months and significantly boosting conversion rates.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="result-card" data-aos="fade-up" data-aos-duration="1200">
+                <span class="case-badge purple">Local Services</span>
+                <div class="result-stat">5x</div>
+                <h4>Lead Generation</h4>
+                <p>Executed a targeted Google Ads campaign for a local service business, multiplying qualified leads by 5x while reducing cost-per-lead by 40%.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="result-card" data-aos="fade-up" data-aos-duration="1300">
+                <span class="case-badge blue">SaaS Startup</span>
+                <div class="result-stat">#1</div>
+                <h4>Ranking Achieved</h4>
+                <p>Dominated niche SaaS keywords through strategic SEO, earning the #1 Google spot for 12+ high-intent keywords within 4 months.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
         <div data-aos="fade-up" data-aos-duration="1000">
@@ -830,7 +967,6 @@
                         <li><i class="fa-solid fa-circle-check"></i> Standard WhatsApp Support</li>
                     </ul>
                 </div>
-                <!-- WhatsApp order link with custom pre-written message -->
                 <a href="https://wa.me/923158947472?text=Hi%20The%20RK%20Agency!%20I%20am%20interested%20in%20buying%20your%20*Starter%20Package%20($299)*.%20Please%20let%20me%20know%20the%20next%20steps." class="btn-pricing outline" target="_blank">Buy Starter Package</a>
             </div>
 
@@ -886,86 +1022,81 @@
             <!-- Main Blog Article -->
             <div class="blog-content">
                 <div class="blog-meta">
-                    <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> July 14, 2026</span>
-                    <span>|</span>
-                    <span><i class="fa-regular fa-user" style="margin-right: 5px;"></i> By The RK Agency</span>
+                    <span><i class="fa-solid fa-calendar-days"></i> July 2026</span>
+                    <span><i class="fa-solid fa-user"></i> By RK Admin</span>
                 </div>
-                
-                <h3 class="blog-title">Why Your Business is Invisible Without Performance Ads & Strategic SEO</h3>
-                
+                <h3 class="blog-title">How Multi-Channel Ad Architectures Maximize Modern E-commerce ROAS</h3>
                 <div class="blog-body">
-                    <p>In today's hyper-competitive digital landscape, simply having a beautiful website is no longer enough. If your platform isn't actively capturing high-intent buyers, you are leaving massive revenue on the table. To scale a modern brand, you need a powerful, dual-engine approach: <strong>High-Converting Paid Ads</strong> and <strong>Dominant Organic SEO</strong>.</p>
-                    
-                    <h4>1. Laser-Targeted Meta & Google Ads (Instant Scaling)</h4>
-                    <p>Paid advertising is the fastest way to inject fresh leads into your sales pipeline. While Meta Ads (Facebook & Instagram) allow us to visually capture users based on precise demographic behaviors, Google Ads captures active buyers at the exact moment they search for your services. When engineered correctly, this combination maximizes your Return on Ad Spend (ROAS) instantly.</p>
-                    
-                    <h4>2. The Compounding Power of Technical SEO (Long-Term Traffic)</h4>
-                    <p>While ads bring immediate traffic, Search Engine Optimization (SEO) builds a permanent digital asset. By optimizing your site’s technical architecture and publishing authority-driven content, your business ranks on the first page of Google. This organic visibility builds immense brand trust and pulls in high-quality inbound leads 24/7—completely free of ad spend.</p>
-                    
-                    <h4>3. Creating a Unified Brand Authority</h4>
-                    <p>True market dominance happens when your paid campaigns and organic search work together. A potential client might see your Meta ad, browse your social profiles, search for your industry on Google, and find your blog ranking at the top. This omni-channel presence makes your brand look established, trustworthy, and undisputed.</p>
-                    
-                    <h4>Conclusion</h4>
-                    <p>Scaling a business shouldn't rely on guesswork. By aligning precision-engineered paid ad funnels with robust, long-term SEO structures, you unlock predictable growth. At The RK Agency, we design these exact customer-acquisition systems to take your brand to the global stage.</p>
+                    <p>In today's digital landscape, relying on a single traffic source is a dangerous strategy. Winning brands use a multi-tiered framework—combining Meta's demographic capture engine with Google Search buyer intent networks.</p>
+                    <h4>1. Cross-Platform Pixel Synergies</h4>
+                    <p>When a customer engages with your brand via Instagram ads, their intent should immediately be retargeted through Google Shopping and YouTube video workflows to guarantee conversion loops.</p>
                 </div>
             </div>
-
-            <!-- Blog Sidebar Card -->
+            <!-- Blog Sidebar -->
             <div class="blog-sidebar">
-                <h3>Want to Scale Your Brand?</h3>
-                <p>Hamari team aapke business ke liye targeted Google/Meta Ads aur high-ranking SEO strategies design karegi.</p>
-                <a href="#pricing" class="btn-premium-neon">Get Free Strategy Plan</a>
+                <h3>Want Exclusive Insights?</h3>
+                <p>We regularly drop deep technical marketing breakdown strategies exclusively for our partner network.</p>
+                <a href="#contact" class="btn-premium-neon" style="padding: 12px 25px; font-size: 14px;">Subscribe Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="contact-wrap" data-aos="fade-up" data-aos-duration="1000">
-        <h2>Initiate Global Scale</h2>
-        <form class="premium-form" onsubmit="event.preventDefault(); alert('Strategy Vector Loaded Successfully!');">
-            <input type="text" placeholder="Full Client Name" required>
-            <input type="email" placeholder="Corporate Email Address" required>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-wrap">
+        <h2 data-aos="fade-up" data-aos-duration="1000">Let's Build Something Great</h2>
+        <form class="premium-form" data-aos="fade-up" data-aos-duration="1200">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
             <div class="form-full-row">
-                <textarea placeholder="Describe your performance marketing milestones or visual brand design parameters..." rows="5" required></textarea>
+                <input type="text" placeholder="Subject" required>
             </div>
-            <button type="submit" class="btn-premium-neon">Request Free Allocation Blueprint</button>
+            <div class="form-full-row">
+                <textarea placeholder="Tell us about your project..." rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn-premium-neon">Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></button>
         </form>
     </section>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/923158947472" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923158947472" class="floating-whatsapp" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Footer with Social Media Links -->
+    <!-- Footer Section -->
     <footer>
         <div class="social-links">
-            <a href="https://www.facebook.com/vj.rameez.khan.2025" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/khanvjrameez/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/muhammad-rameez-khan-a01a273bb" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
-        <p>&copy; 2026 The RK Agency. All Rights Reserved. Engineered for Absolute Scale.</p>
+        <p>&copy; 2026 The RK Agency. All Rights Reserved. Engineered for Elite Scale.</p>
     </footer>
 
-    <!-- Scripts For Animations -->
+    <!-- JavaScript For Animations (AOS & Progress Bars) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        // AOS Initialize
         AOS.init({
-            once: true,
-            mirror: false
+            once: true
         });
 
-        // Skill-Bar Dynamic Load
+        // Skill Bars Scroll Fill Animation Script
+        const progressSection = document.getElementById('about');
+        const progressFills = document.querySelectorAll('.progress-fill-glow');
+
+        function showProgress() {
+            progressFills.forEach(fill => {
+                const targetWidth = fill.getAttribute('data-target');
+                fill.style.width = targetWidth;
+            });
+        }
+
         window.addEventListener('scroll', () => {
-            const skillSection = document.getElementById('about');
-            if(skillSection) {
-                const position = skillSection.getBoundingClientRect();
-                if(position.top < window.innerHeight && position.bottom >= 0) {
-                    const bars = document.querySelectorAll('.progress-fill-glow');
-                    bars.forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-target');
-                    });
-                }
+            const sectionPos = progressSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight / 1.2;
+
+            if (sectionPos < screenPos) {
+                showProgress();
             }
         });
     </script>
