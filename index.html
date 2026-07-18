@@ -60,7 +60,7 @@
             position: relative;
         }
 
-        /* --- Header Menu --- */
+        /* --- Header Menu & Premium Logo --- */
         .header-nav {
             display: flex;
             justify-content: space-between;
@@ -76,17 +76,79 @@
         }
 
         .header-nav .brand-logo {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            color: white;
+            transition: transform 0.3s ease;
         }
 
-        .header-nav .brand-logo span {
+        .header-nav .brand-logo:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Geometric Infinite Shield Icon Code */
+        .logo-shield-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-shield-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+            transform: rotate(45deg);
+            animation: shieldGlow 4s linear infinite;
+        }
+
+        @keyframes shieldGlow {
+            0% { transform: translate(-100%, -100%) rotate(45deg); }
+            100% { transform: translate(100%, 100%) rotate(45deg); }
+        }
+
+        .logo-shield-icon i {
+            font-size: 20px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Brand Typography Framework */
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #ffffff 60%, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--text-gray);
+            margin-top: 1px;
         }
 
         .menu-links a {
@@ -822,9 +884,17 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation with New Executive Logo -->
     <header class="header-nav">
-        <a href="#" class="brand-logo"><span style="margin-right: 8px;">The RK</span><span>Agency</span></a>
+        <a href="#" class="brand-logo">
+            <div class="logo-shield-icon">
+                <i class="fa-solid fa-circle-nodes"></i>
+            </div>
+            <div class="logo-text-wrapper">
+                <span class="logo-main">THE RK</span>
+                <span class="logo-sub">AGENCY</span>
+            </div>
+        </a>
         <nav class="menu-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -1062,7 +1132,7 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Footer Section -->
+    <!-- Footer Section with Real Profiles Integrated -->
     <footer>
         <div class="social-links">
             <a href="https://www.facebook.com/vj.rameez.khan.2025" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
