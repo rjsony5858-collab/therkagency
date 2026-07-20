@@ -1128,25 +1128,28 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-wrap">
         <h2 data-aos="fade-up" data-aos-duration="1000">Let's Build Something Great</h2>
-        <form class="premium-form" data-aos="fade-up" data-aos-duration="1200">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <div class="form-full-row">
-                <input type="text" placeholder="Subject" required>
-            </div>
-            <div class="form-full-row">
-                <textarea placeholder="Tell us about your project..." rows="6" required></textarea>
-            </div>
-            <button type="submit" class="btn-premium-neon">Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></button>
-        </form>
-    </section>
+        <form class="premium-form" data-aos="fade-up" data-aos-duration="1200" action="https://formspree.io/f/mzdngvdd" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    
+  <div class="form-full-row">
+    <input type="text" name="subject" placeholder="Subject" required>
+</div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/923158947472" class="floating-whatsapp" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+<div class="form-full-row">
+    <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+</div>
 
-    <!-- Footer Section with Real Profiles Integrated -->
+<button type="submit" class="btn-premium-neon">Send Message</button>
+</form>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/923158947472" class="floating-whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Footer Section with Real Profiles Integrated -->
     <footer>
         <div class="social-links">
             <a href="https://www.facebook.com/vj.rameez.khan.2025" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
