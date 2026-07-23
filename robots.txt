@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rjsony5858-collab.github.io/therkagency/sitemap.xml
